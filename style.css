@@ -1,0 +1,83 @@
+.container{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(135deg, lightcoral, lightblue);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.img{
+    text-align: center;
+    filter: brightness(100%);
+}
+.topic{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: #f2f6f8;
+    position: relative;
+    left:25px;
+    font-size:20px;
+    top: 30px;
+}
+
+.topic:hover{
+   color: red;
+}
+
+.boy{
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+}
+
+.boy input{
+    padding: 5px;
+    outline: none;
+    text-align: center;
+    font-weight:bold;
+}
+.girl{
+    text-align: center;
+    margin-top: -10px;
+    color: black;
+    font-weight: bold;
+}
+
+.girl input{
+    padding: 5px;
+    outline: none;
+    text-align: center;
+    font-weight:bold;
+}
+
+.btn{
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100px;
+    margin: auto;
+}
+
+.btn button{
+    background-color: rgb(235, 33, 64);
+    color: azure;
+}
+
+input:focus{
+    border: 3px solid rgb(219, 14, 14);
+}
+
+#result{
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    color:black;                              
+    font-size: 24px;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+}
+
+

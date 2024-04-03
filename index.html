@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES Calculator</title>
+    <link rel="stylesheet" href="style.css" type="text/css"> <!-- Assuming you have a separate CSS file -->
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+</head>
+<body class="container">
+    <div class="topic">
+        <h1>FLAMES Calculator</h1>
+    </div>
+    <div class="img">
+        <img src="lover.png" alt="clip">
+    </div>
+            <div class="boy">
+                <input type="text" id="p1" placeholder=" &#128149; Your Name">
+            </div>
+            <br>
+            <br>
+            <div class="girl">
+                <input type="text" id="p2" placeholder="&#128158; Your Another Name">
+            </div>
+            <br>  
+            <div class="btn">          
+                <button type="button" onclick="checkFLAMES()">Calculate Your FLAMES</button> <!-- type="button" to prevent form submission -->
+            </div>
+    <div id="result"></div> <!-- Result will be displayed here -->
+    <script>
+        function checkFLAMES() {
+let p1 = document.getElementById("p1").value.toLowerCase().replace(/\s/g, "");
+let p1_list = p1.split("");
+let p2 = document.getElementById("p2").value.toLowerCase().replace(/\s/g, "");
+let p2_list = p2.split("");
+let proceed = true;
+
+while (proceed) {
+let ret_list = removeMatchChar(p1_list, p2_list);
+let con_list = ret_list[0];
+proceed = ret_list[1];
+
+let star_index = con_list.indexOf("*");
+
+p1_list = con_list.slice(0, star_index);
+p2_list = con_list.slice(star_index + 1);
+}
+
+let count = p1_list.length + p2_list.length;
+let result = ["Friends", "Love", "Affection", "Marriage", "Enemy", "Siblings"];
+
+while (result.length > 1) {
+let split_index = (count % result.length) - 1;
+if (split_index >= 0) {
+    let right = result.slice(split_index + 1);
+    let left = result.slice(0, split_index);
+    result = right.concat(left);
+} else {
+    result.pop();
+}
+}
+
+document.getElementById("result").innerHTML = result[0];
+}
+
+function removeMatchChar(list1, list2) {
+let common_char = [];
+let proceed = false;
+
+for (let i = 0; i < list1.length; i++) {
+for (let j = 0; j < list2.length; j++) {
+    if (list1[i] === list2[j]) {
+        common_char.push(list1[i]);
+        list1[i] = "*";
+        list2[j] = "*";
+        proceed = true;
+        break;
+    }
+}
+}
+return [list1.concat(list2), proceed];
+}
+    </script>
+</body>
+</html>
